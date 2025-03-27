@@ -58,14 +58,14 @@ const Home: React.FC<HomeProps> = () => {
     };
 
     return (
-        <div className="h-full w-full">
-            <div className="h-full w-full -z-10 fixed">
+        <div className="h-full w-full relative"> {/* Added relative */}
+            <div className="h-full w-full fixed top-0 left-0"> {/* Updated positioning */}
                 <video
                     autoPlay
                     loop
                     muted
                     controls={false}
-                    className="h-full w-full scale-105 object-cover"
+                    className="h-screen w-screen object-cover"
                     style={{
                         filter: `blur(${calculateBlur()}px)`,
                     }}
@@ -74,13 +74,15 @@ const Home: React.FC<HomeProps> = () => {
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <div className="">
+            <div className="relative z-10">
                 <div className="h-screen w-screen z-10">
                     <div className="flex flex-col items-center justify-center h-full w-full text-white">
-                        <div className="text-4xl md:text-6xl lg:text-8xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                        <div
+                            className="text-4xl md:text-6xl lg:text-8xl font-bold drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                             BoundlessFlight
                         </div>
-                        <div className="text-xl md:text-2xl lg:text-4xl font-medium text-gray-200 mt-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] italic">
+                        <div
+                            className="text-xl md:text-2xl lg:text-4xl font-medium text-gray-200 mt-1 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] italic">
                             The ultimate aircraft maintenance tracker
                         </div>
                         <a href={"dashboard"} id="dash-button"
@@ -95,8 +97,10 @@ const Home: React.FC<HomeProps> = () => {
                 </div>
                 <div ref={scrollToAbout}>
                     <div className="h-screen w-screen pt-10 pb-20">
-                        <div className="flex flex-col items-center text-center justify-center h-full text-black mt-24 md:pt-0 w-10/12 md:w-2/3 mx-auto">
-                            <div className="text-2xl md:text-4xl lg:text-6xl font-medium text-gray-200 mt-2 pb-10 rounded-full drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                        <div
+                            className="flex flex-col items-center text-center justify-center h-full text-black mt-24 md:pt-0 w-10/12 md:w-2/3 mx-auto">
+                            <div
+                                className="text-2xl md:text-4xl lg:text-6xl font-medium text-gray-200 mt-2 pb-10 rounded-full drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                                 A quick and easy solution to tracking your aircraft's safety and reliability.
                             </div>
                             <div className="flex flex-wrap justify-center mt-10 gap-10">
@@ -144,10 +148,12 @@ const Home: React.FC<HomeProps> = () => {
                     </div>
                     <div className="h-screen w-screen">
                         <div className="flex flex-col items-center justify-center h-full w-full text-gray-800">
-                            <div className="text-6xl font-bold text-gray-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                            <div
+                                className="text-6xl font-bold text-gray-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                                 Meet the Team
                             </div>
-                            <div className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-200 mt-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+                            <div
+                                className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-200 mt-4 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                                 We get the job done, so you can fly safely!
                             </div>
                             <div className="flex flex-wrap justify-center gap-4 mt-10">
